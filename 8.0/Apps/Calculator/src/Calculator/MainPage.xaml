@@ -7,6 +7,7 @@
           RowDefinitions="2*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*">
 
+        <!-- 1行目 1段目-->
         <Label x:Name="CurrentCalculation"
                FontSize="22"
                LineBreakMode="NoWrap"
@@ -17,25 +18,31 @@
                VerticalTextAlignment="Start"
                Grid.Row="0"/>
 
+        <!-- 1行目 2段目-->
         <Label x:Name="resultText"
                FontSize="64" FontAttributes="Bold" Text="0"
                HorizontalTextAlignment="End"
                VerticalTextAlignment="End"
                TextColor="{StaticResource Light}"
-               LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+               LineBreakMode="NoWrap" 
+               Grid.ColumnSpan="4" />
 
+        <!-- 1行目 3段目-->
         <BoxView BackgroundColor="{StaticResource LightGray}" HeightRequest="1"
-                 Grid.Row="0" VerticalOptions="End"
+                 Grid.Row="0" 
+                 VerticalOptions="End"
                  Grid.ColumnSpan="4"
                  />
 
+        <!-- 2行目 -->
         <Button Text="C" Grid.Row="1" Grid.Column="0"
                Clicked="OnClear" />
         <Button Text="+/-" Grid.Row="1" Grid.Column="1"
                Clicked="OnNegative" />
-        <Button Text="%" Grid.Row="1" Grid.Column="2"
-               Clicked="OnPercentage" />
+        <Button Text="次ページ" Grid.Row="1" Grid.Column="2"
+               Clicked="OnMoveNextPage" />
 
+        <!-- 3行目 -->
         <Button Text="7" Grid.Row="2" Grid.Column="0"
                Clicked="OnSelectNumber" />
         <Button Text="8" Grid.Row="2" Grid.Column="1"
@@ -43,6 +50,7 @@
         <Button Text="9" Grid.Row="2" Grid.Column="2"
                Clicked="OnSelectNumber" />
 
+        <!-- 4行目 -->
         <Button Text="4" Grid.Row="3" Grid.Column="0"
               Clicked="OnSelectNumber" />
         <Button Text="5" Grid.Row="3" Grid.Column="1"
@@ -50,6 +58,7 @@
         <Button Text="6" Grid.Row="3" Grid.Column="2"
               Clicked="OnSelectNumber" />
 
+        <!-- 5行目 -->
         <Button Text="1" Grid.Row="4" Grid.Column="0"
               Clicked="OnSelectNumber" />
         <Button Text="2" Grid.Row="4" Grid.Column="1"
@@ -57,6 +66,7 @@
         <Button Text="3" Grid.Row="4" Grid.Column="2"
               Clicked="OnSelectNumber" />
 
+        <!-- 6行目 -->
         <Button Text="00" Grid.Row="5" Grid.Column="0" 
               Clicked="OnSelectNumber" />
         <Button Text="0" Grid.Row="5" Grid.Column="1" 
@@ -64,6 +74,7 @@
         <Button Text="." Grid.Row="5" Grid.Column="2" 
               Clicked="OnSelectNumber" />
 
+        <!-- 4列目の計算式 -->
         <Button Text="÷" Grid.Row="1" Grid.Column="3"
                Clicked="OnSelectOperator" />
         <Button Text="×" Grid.Row="2" Grid.Column="3"

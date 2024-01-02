@@ -164,10 +164,14 @@
     </Shell.MenuItemTemplate>-->
 
     <FlyoutItem Route="animals"
-                FlyoutDisplayOptions="AsMultipleItems">
+                FlyoutDisplayOptions="AsMultipleItems"
+                IsVisible="True"
+                >
         <Tab Title="Domestic"
              Route="domestic"
-             Icon="paw.png">
+             Icon="paw.png"
+             IsVisible="False"
+             >
             <ShellContent Route="cats"
                           Style="{StaticResource DomesticShell}"
                           Title="Cats"
@@ -200,23 +204,38 @@
                       Style="{StaticResource ElephantsShell}"
                       Title="Elephants"
                       Icon="elephant.png"
-                      ContentTemplate="{DataTemplate views:ElephantsPage}" />
+                      ContentTemplate="{DataTemplate views:ElephantsPage}"
+                      IsVisible="True"
+                      IsEnabled="False"
+                      />
         <ShellContent Route="bears"
                       Style="{StaticResource BearsShell}"
                       Title="Bears"
                       Icon="bear.png"
-                      ContentTemplate="{DataTemplate views:BearsPage}" />
+                      ContentTemplate="{DataTemplate views:BearsPage}" 
+                      IsVisible="False"/>
     </FlyoutItem>
 
     <ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"
                   Icon="info.png"
-                  ContentTemplate="{DataTemplate views:AboutPage}" />
+                  ContentTemplate="{DataTemplate views:AboutPage}" 
+                  IsVisible="False"/>
 
-    <MenuItem Text="Help"
+    <MenuFlyoutItem Text="Settings"
+                    IconImageSource="settings.png"
+                    Command="{Binding SettingsCommand}"
+                    CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" 
+                    IsEnabled="True"
+                    IsDestructive="True"
+                    />
+    <MenuFlyoutItem Text="Help"
               IconImageSource="help.png"
               Command="{Binding HelpCommand}"
-              CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" />
+              CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" 
+              IsEnabled="True"
+              IsDestructive="True"
+              />
 
 </Shell>

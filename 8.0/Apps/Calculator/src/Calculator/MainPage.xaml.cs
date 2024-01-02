@@ -6,6 +6,9 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+
+        NavigationPage.SetHasNavigationBar(this, false);
+
         OnClear(this, null);
 
     }
@@ -123,4 +126,11 @@ public partial class MainPage : ContentPage
             OnCalculate(this, null);
         }
     }
+
+    // ボタンをクリックしたらCalculatorPageに遷移する
+    private async void OnMoveNextPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CalculatorPage());
+    }
+
 }
