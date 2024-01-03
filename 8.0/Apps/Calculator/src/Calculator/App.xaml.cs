@@ -7,7 +7,7 @@ public partial class App : Application
 		InitializeComponent();
 
 		// MainPage = new MainPage();
-		MainPage = new NavigationPage(new CalculatorPage());
+		MainPage = new NavigationPage(new CalculatorPage(new CalculatorViewModel()));
 
 
     }

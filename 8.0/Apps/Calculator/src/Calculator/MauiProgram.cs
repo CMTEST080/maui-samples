@@ -1,4 +1,6 @@
-﻿namespace Calculator;
+﻿using CommunityToolkit.Maui;
+
+namespace Calculator;
 
 public static class MauiProgram
 {
@@ -13,6 +15,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        builder.UseMauiCommunityToolkit();
+
+        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<CalculatorPage>();
+        builder.Services.AddSingleton<CalculatorViewModel>();
+
+        return builder.Build();
 	}
 }

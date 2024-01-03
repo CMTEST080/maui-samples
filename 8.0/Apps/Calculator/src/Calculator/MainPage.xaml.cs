@@ -1,4 +1,5 @@
-﻿namespace Calculator;
+﻿
+namespace Calculator;
 
 public partial class MainPage : ContentPage
 {
@@ -130,7 +131,7 @@ public partial class MainPage : ContentPage
     // ボタンをクリックしたらCalculatorPageに遷移する
     private async void OnMoveNextPage(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CalculatorPage());
+        await Navigation.PushAsync(App.Current.MainPage);
     }
 
 }
