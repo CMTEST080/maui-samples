@@ -4,9 +4,6 @@ namespace Calculator;
 
 public class CalculatorPage : ContentPage
 {
-    private Label currentCalculation;
-    private Label resultText;
-
     public CalculatorPage(CalculatorViewModel vm)
     {
         BindingContext = vm;
@@ -38,7 +35,7 @@ public class CalculatorPage : ContentPage
         };
 
         // Create labels
-        currentCalculation = new Label
+        var currentCalculation = new Label
         {
             FontSize = 22,
             LineBreakMode = LineBreakMode.NoWrap,
@@ -50,7 +47,7 @@ public class CalculatorPage : ContentPage
         grid.Add(currentCalculation, 0, 0);
         Grid.SetColumnSpan(currentCalculation, 4);
 
-        resultText = new Label
+        var resultText = new Label
         {
             FontSize = 64,
             FontAttributes = FontAttributes.Bold,
