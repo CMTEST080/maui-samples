@@ -23,11 +23,11 @@ public partial class CalculatorViewModel : ObservableObject
     private string decimalFormat = "N0";
 
     [RelayCommand]
-    void SelectNumber(object sender)
+    void SelectNumber(string sender)
     {
 
-        Button button = (Button)sender;
-        string pressed = button.Text;
+        // Button button = (Button)sender;
+        string pressed = sender; // button.Text;
 
         currentEntry += pressed;
 
@@ -49,13 +49,13 @@ public partial class CalculatorViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void OnSelectOperator(object sender)
+    void OnSelectOperator(string sender)
     {
         LockNumberValue(ResultText);
 
         currentState = -2;
-        Button button = (Button)sender;
-        string pressed = button.Text;
+        // Button button = (Button)sender;
+        string pressed = sender; //  button.Text;
         mathOperator = pressed;
     }
 
@@ -78,7 +78,7 @@ public partial class CalculatorViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void Clear(object sender)
+    void Clear(string sender)
     {
         firstNumber = 0;
         secondNumber = 0;
@@ -89,7 +89,7 @@ public partial class CalculatorViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void Calculate(object sender)
+    void Calculate()
     {
         if (currentState == 2)
         {
@@ -109,19 +109,19 @@ public partial class CalculatorViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void Negative(object sender)
+    void Negative(string sender)
     {
         if (currentState == 1)
         {
             secondNumber = -1;
             mathOperator = "×";
             currentState = 2;
-            Calculate(this);
+            Calculate();
         }
     }
 
     [RelayCommand]
-    void Percentage(object sender)
+    void Percentage(string sender)
     {
         if (currentState == 1)
         {
@@ -130,7 +130,7 @@ public partial class CalculatorViewModel : ObservableObject
             secondNumber = 0.01;
             mathOperator = "×";
             currentState = 2;
-            Calculate(this);
+            Calculate();
         }
     }
 
